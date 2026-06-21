@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Nav Menu By JavaScript | منوی فیکس چسبان با جاوا اسکریپت</title>
+    <meta name="description" content="Fix Your Nav Menu Position By JavaScript | منوی فیکس برای سایت با جاوا اسکریپت فیکس کردن منو در بالای سایت"/>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/vazirmatn-font-face.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+
+    <style>
+        /* Developed by Amin Arjmand
+        Site: aminarjmand.com | GitHub: @sibche2013 
+        */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 2000px; /* high height to allow long scrolling demo */
+            color: #333333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        header {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .headerImg {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #a8ff78 0%, #78ffd6 100%);
+            color: #1e5f38;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-top: none;
+            padding: 5px 15px;
+            display: flex;
+            gap: 10px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(46, 204, 113, 0.15);
+            color: #27ae60;
+        }
+
+        /* Fixed Class triggered by JS */
+        .topMenu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            z-index: 9999;
+            padding: 5px 5%;
+        }
+
+        .content-dummy {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px dashed rgba(0,0,0,0.1);
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 30px;
+            color: #7f8c8d;
+        }
+
+        .button {
+            font-family: inherit;
+            display: block;
+            margin: 40px auto;
+            padding: 12px 30px;
+            border: 1px solid rgba(0,0,0,0.08);
+            cursor: pointer;
+            font-size: 0.95rem;
+            background-color: #ffffff;
+            color: #333333;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #27ae60;
+            color: white;
+            border-color: #27ae60;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header id="header-wrapper">
+        <div class="headerImg">
+            Your Premium Website Header Banner
+        </div>
+        
+        <nav id="menu">
+            <a href="#">Home Page</a>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+        </nav>
+    </header>
+
+    <div class="content-dummy">
+        <h3>👇 Scroll down to see the magic sticky navbar effect! 👇</h3>
+        <p style="margin-top: 15px;">اسکرول کنید تا چسبیدن منو به بالای صفحه را مشاهده کنید</p>
+    </div>
+
+    <button class="button" onclick="history.back();">← Back To Previous Page</button>
+</div>
+
+<script src="fixedNavMenu.js"></script>
+</body>
+</html>
