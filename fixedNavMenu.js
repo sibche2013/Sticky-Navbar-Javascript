@@ -1,22 +1,18 @@
-    addEventListener("scroll", function () {
-        //Get Menu Document
-        var menu = document.getElementById("menu");
-        //Get Menu Classes
-        var navClasses = menu.getAttribute("class");
-        //If Menu Hasn't Any Classes Set Empty Class
-        if (!navClasses) {
-            menu.setAttribute("class", " ");
+/* Developed by Amin Arjmand
+Email: aminarj2000@gmail.com | Site: aminarjmand.com | GitHub: @sibche2013 
+*/
+
+document.addEventListener("DOMContentLoaded", function () {
+    var menu = document.getElementById("menu");
+    // Cache the absolute initial top positions dynamically outside the scroll loop
+    var stickyThreshold = menu.offsetTop;
+
+    window.addEventListener("scroll", function () {
+        // High performance class switching based on computed coordinates
+        if (window.scrollY >= stickyThreshold) {
+            menu.classList.add("topMenu");
+        } else {
+            menu.classList.remove("topMenu");
         }
-        //If Distance From Top <= Distance Menu From Top , Remove Sticky Menu Class
-        if (scrollY <= menu.offsetTop) {
-            menu.setAttribute("class", navClasses.replace("topMenu", ""))
-        }
-        //If Distance From Top > Distance Menu From Top , Add Sticky Menu Class
-        else {
-            //If There Sticky Class not Defined
-            if (navClasses.indexOf("topMenu") == -1) {
-                //Set Sticky Menu Class To Nav
-                menu.setAttribute("class", navClasses + " topMenu");
-            }
-        }
-    })
+    });
+});
